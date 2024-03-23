@@ -15,16 +15,31 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "config":{
+        "googleMapsApiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+      }
+
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/logo.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "config": {
+        "googleMaps": {
+          "apiKey": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        }
+      },
+      "package": "com.dami600b.farmSmarter_app"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "1a7245d5-1994-4539-8576-ad12022b95d3"
+      }
     }
   }
 }

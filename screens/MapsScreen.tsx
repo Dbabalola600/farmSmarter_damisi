@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { View, Button, Alert, StyleSheet, Pressable, Text } from 'react-native';
-import MapView, { Polyline, LatLng, Marker } from 'react-native-maps';
+import MapView, { Polyline, LatLng, Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import * as Location from 'expo-location';
 import AppButton from '../components/AppButton';
@@ -74,7 +74,7 @@ export default function MapsScreen() {
 
     const subscription = await Location.watchPositionAsync(
       {
-        accuracy: Location.Accuracy.High,
+        accuracy: Location.Accuracy.Highest,
         timeInterval: 5000, // update every x seconds
         distanceInterval: 1, // update every x meters
       },
@@ -113,7 +113,7 @@ export default function MapsScreen() {
     console.log(locationSubscription)
     if (locationSubscription) {
       console.log("stopping ");
-      locationSubscription.remove(); 
+      locationSubscription.remove();
       setLocationSubscription(null);
     }
 
@@ -144,6 +144,7 @@ export default function MapsScreen() {
           showsUserLocation
           followsUserLocation
           initialRegion={initialRegion}
+          provider={PROVIDER_GOOGLE}
         >
           {path.length > 0 && <Polyline coordinates={path} strokeWidth={5} strokeColor='red' />}
           {userLocation &&
