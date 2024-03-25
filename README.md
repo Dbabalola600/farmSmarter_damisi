@@ -9,7 +9,7 @@
 
 # Execution 
 - expo location was used to get the users location after permission was granted 
-- react native maps along with google as a provider was used to track a users location by every 2 meters (this was used due to physical contraints but can be increased )
+- react native maps along with google as a provider was used to track a users location by every 2 meters (this was used due to physical constraints but can be increased )
 
 
 # Running 
