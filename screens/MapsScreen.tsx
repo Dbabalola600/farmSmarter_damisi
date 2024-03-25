@@ -75,8 +75,8 @@ export default function MapsScreen() {
     const subscription = await Location.watchPositionAsync(
       {
         accuracy: Location.Accuracy.Highest,
-        timeInterval: 5000, // update every x seconds
-        distanceInterval: 1, // update every x meters
+        timeInterval: 2000, // update every x seconds
+        distanceInterval: 2, // update every x meters
       },
       (newLocation) => {
         const newCoordinate: LatLng = {
